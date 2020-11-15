@@ -26,7 +26,7 @@ mkdir "$YTAR_DOWNLOAD_TEMP_PATH"
 
 echo "Starting..."
 runcmd "$YTAR_CMD_BASE \
-				--batch-file $YTAR_DOWNLOAD_BATCH_PATH \
-				--output '$YTAR_DOWNLOAD_TEMP_PATH/channels/%(channel_id)s/playlists/%(playlist_id)s/%(playlist_index)s_%(id)s_%(title)s_%(timestamp)s.%(ext)s' \
-				--download-archive $YTAR_DOWNLOAD_ARCHIVE_PATH \
-				$@"
+	--batch-file $YTAR_DOWNLOAD_BATCH_PATH \
+	--output '$YTAR_DOWNLOAD_TEMP_PATH/channels/%(channel_id)s/playlists/%(playlist_id)s/%(playlist_index)s_%(id)s_%(title)s_%(timestamp)s.%(ext)s' \
+	--download-archive $YTAR_DOWNLOAD_ARCHIVE_PATH \
+	$@"
