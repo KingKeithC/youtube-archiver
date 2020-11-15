@@ -18,8 +18,8 @@ YTAR_CMD_BASE="python -m youtube_dl --config-location $YTAR_YTDL_CONFIG_PATH"
 
 mkdir "$YTAR_DOWNLOAD_TEMP_PATH"
 
-[[ ! -f "YTAR_DOWNLOAD_BATCH_PATH" ]] 	&& errexit "The path '$YTAR_DOWNLOAD_BATCH_PATH' does not exist!"
-[[ ! -f "YTAR_DOWNLOAD_ARCHIVE_PATH" ]] && errexit "The path '$YTAR_DOWNLOAD_ARCHIVE_PATH' does not exist!"
+[[ ! -f "$YTAR_DOWNLOAD_BATCH_PATH" ]] 	&& errexit "The path '$YTAR_DOWNLOAD_BATCH_PATH' does not exist!"
+[[ ! -f "$YTAR_DOWNLOAD_ARCHIVE_PATH" ]] && errexit "The path '$YTAR_DOWNLOAD_ARCHIVE_PATH' does not exist!"
 
 # Debug
 [[ -n "$YTAR_DEBUG" ]] && set | grep YTAR
