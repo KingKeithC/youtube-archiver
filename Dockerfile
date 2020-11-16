@@ -14,4 +14,4 @@ RUN ls -l && \
 
 VOLUME [ "$YTAR_ARCHIVE_PATH" ]
 
-ENTRYPOINT ./archiver.sh
+ENTRYPOINT ["./archiver.sh"]
