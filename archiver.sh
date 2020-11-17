@@ -25,6 +25,8 @@ YTAR_RCLONE_CONFIG_PATH="${YTAR_RCLONE_CONFIG_PATH:-$YTAR_INSTALL_BASE_PATH/rclo
 
 echo "Arguments: $*"
 echo "Starting Download from YouTube..."
+# In our case, we intend to expand the remaining arguments, so SC2048 can be skipped for the next command.
+# shellcheck disable=SC2048
 python -m youtube_dl \
  --config-location "$YTAR_YTDL_CONFIG_PATH" \
  --download-archive "$YTAR_ARCHIVE_PATH/archivefile" \
