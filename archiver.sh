@@ -23,12 +23,12 @@ YTAR_RCLONE_CONFIG_PATH="${YTAR_RCLONE_CONFIG_PATH:-$YTAR_INSTALL_BASE_PATH/rclo
 # Print variables when debugging
 [[ -n "$YTAR_DEBUG" ]] && set | grep YTAR
 
-echo "Arguments: $@"
+echo "Arguments: $*"
 echo "Starting Download from YouTube..."
 python -m youtube_dl \
  --config-location "$YTAR_YTDL_CONFIG_PATH" \
  --download-archive "$YTAR_ARCHIVE_PATH/archivefile" \
  --output "$YTAR_DOWNLOAD_TEMP_PATH/channels/%(channel_id)s/playlists/%(playlist_id)s/%(playlist_index)s_%(release_date)s_%(id)s_%(title)s.%(ext)s" \
- $@
+ "$*"
 
 #rclone --config $YTAR_RCLONE_CONFIG_PATH
