@@ -2,6 +2,8 @@
 
 # Exit immediately on errors
 set -o errexit
+
+# Do not allow usaged of unset variables
 set -o nounset
 
 # errexit prints an error message, then exits the script
