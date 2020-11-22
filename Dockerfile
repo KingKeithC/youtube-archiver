@@ -13,7 +13,7 @@ COPY . .
 
 RUN ls -l && \
 		pip install --no-cache-dir youtube_dl && \
-		apk add --no-cache rclone bash
+		apk add --no-cache rclone bash ffmpeg
 
 VOLUME [ "$YTAR_ARCHIVE_PATH" ]
 
