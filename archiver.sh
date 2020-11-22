@@ -13,6 +13,7 @@ function errexit {
 [[ -z "$YTAR_DOWNLOADS_PATH" ]]			&& errexit "The variable YTAR_DOWNLOADS_PATH is missing or not set."
 [[ -z "$YTAR_ARCHIVE_PATH" ]]				&& errexit "The variable YTAR_ARCHIVE_PATH is missing or not set."
 [[ -z "$YTAR_INSTALL_BASE_PATH" ]]	&& errexit "The variable YTAR_INSTALL_BASE_PATH is missing or not set."
+[[ -z "$YTAR_S3_BUCKET_NAME" ]]			&& errexit "The variable YTAR_S3_BUCKET_NAME is missing or not set."
 [[ -z "$AWS_ACCESS_KEY_ID" ]]				&& errexit "The variable AWS_ACCESS_KEY_ID is missing or not set."
 [[ -z "$AWS_SECRET_ACCESS_KEY" ]]		&& errexit "The variable AWS_SECRET_ACCESS_KEY is missing or not set."
 
@@ -31,6 +32,5 @@ python -m youtube_dl \
  --config-location "$YTAR_YTDL_CONFIG_PATH" \
  --download-archive "$YTAR_ARCHIVE_PATH/archivefile" \
  --output "$YTAR_DOWNLOAD_TEMP_PATH/channels/%(channel_id)s/playlists/%(playlist_id)s/%(playlist_index)s_%(release_date)s_%(id)s_%(title)s.%(ext)s" \
+ --exec "$YTAR_INSTALL_BASE_PATH/on_download.sh {}" \
  $*
-
-#rclone --config $YTAR_RCLONE_CONFIG_PATH
