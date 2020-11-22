@@ -1,5 +1,5 @@
 TEST_URLS = https://www.youtube.com/playlist?list=PLFD1682F2801E7ADF https://www.youtube.com/playlist?list=PLaAVDbMg_XArcet5lwcRo12Fh9JrGKydh
-DOCKER_ARGS = -e "YTAR_S3_BUCKET_NAME=${TEST_S3_BUCKET}" -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" -e "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
+DOCKER_ARGS = -e "YTAR_S3_BUCKET_NAME=$(TEST_S3_BUCKET)" -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID)" -e "AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY)"
 
 clean :
 	-docker image rm github.com/kingkeithc/youtube-archiver
