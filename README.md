@@ -1,3 +1,5 @@
+![Standard Build](https://github.com/KingKeithC/youtube-archiver/workflows/Standard%20On-Push%20Build/badge.svg?branch=master)
+
 # Usage
 ```sh
 docker run [DOCKER_OPT...] github.com/kingkeithc/youtube-archiver YOUTUBE_PLAYLIST [YOUTUBE_PLAYLIST...]
