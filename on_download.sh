@@ -1,5 +1,8 @@
 #! /bin/bash
 
+set -o errexit
+set -o nounset
+
 # Fail if no argument was passed to the script
 if [[ $# -ne 1 ]]; then
 	echo "Usage: $0 <path_to_file>"
