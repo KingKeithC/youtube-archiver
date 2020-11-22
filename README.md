@@ -10,7 +10,7 @@ docker run [DOCKER_OPT...] github.com/kingkeithc/youtube-archiver YOUTUBE_PLAYLI
 ## Quick Start
 Run the archiver, using `/archive` to store the list of already downloaded files for use with resuming:
 ```sh
-docker run --rm \
+docker run --rm -it \
 -v `pwd`/archive:/archive/ \
 -e AWS_ACCESS_KEY_ID="" \
 -e AWS_SECRET_ACCESS_KEY="" \
