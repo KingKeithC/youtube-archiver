@@ -2,6 +2,7 @@
 
 # Exit immediately on errors
 set -o errexit
+set -o nounset
 
 # errexit prints an error message, then exits the script
 function errexit {
@@ -31,6 +32,6 @@ echo "Starting Download from YouTube..."
 python -m youtube_dl \
  --config-location "$YTAR_YTDL_CONFIG_PATH" \
  --download-archive "$YTAR_ARCHIVE_PATH/archivefile" \
- --output "$YTAR_DOWNLOAD_TEMP_PATH/channels/%(channel_id)s/playlists/%(playlist_id)s/%(playlist_index)s_%(release_date)s_%(id)s_%(title)s.%(ext)s" \
+ --output "$YTAR_DOWNLOADS_PATH/channels/%(channel_id)s/playlists/%(playlist_id)s/%(playlist_index)s_%(release_date)s_%(id)s_%(title)s.%(ext)s" \
  --exec "$YTAR_INSTALL_BASE_PATH/on_download.sh {}" \
  $*
