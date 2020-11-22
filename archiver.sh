@@ -23,7 +23,7 @@ YTAR_YTDL_CONFIG_PATH="${YTAR_YTDL_CONFIG_PATH:-$YTAR_INSTALL_BASE_PATH/ytdl.con
 YTAR_RCLONE_CONFIG_PATH="${YTAR_RCLONE_CONFIG_PATH:-$YTAR_INSTALL_BASE_PATH/rclone.conf}"
 
 # Print variables when debugging
-[[ -n "$YTAR_DEBUG" ]] && set | grep YTAR
+[[ -n "${YTAR_DEBUG:-}" ]] && set | grep YTAR
 
 echo "Arguments: $*"
 echo "Starting Download from YouTube..."
