@@ -11,4 +11,4 @@ DESTPATH="main:/$YTAR_S3_BUCKET_NAME/$SRCPATH"
 
 # Clone the file to to main backend, using the
 echo "Copying $SRCPATH to $DESTPATH ..."
-rclone --config "$YTAR_INSTALL_BASE_PATH/rclone.conf" clone "$FILEPATH" "main:/$YTAR_S3_BUCKET_NAME/$FILEPATH"
+rclone --config "$YTAR_INSTALL_BASE_PATH/rclone.conf" copy "$FILEPATH" "main:/$YTAR_S3_BUCKET_NAME/$FILEPATH"
