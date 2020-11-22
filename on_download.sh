@@ -6,7 +6,7 @@ if [[ $# -ne 1 ]]; then
 	exit 1
 fi
 
-SRCPATH="$YTAR_DOWNLOADS_PATH/$1"
+SRCPATH="$1"
 DESTPATH="main:/$YTAR_S3_BUCKET_NAME/$SRCPATH"
 
 # Clone the file to to main backend, using the
