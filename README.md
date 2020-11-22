@@ -12,8 +12,9 @@ Run the archiver, using `/archive` to store the list of already downloaded files
 ```sh
 docker run --rm -it \
 -v `pwd`/archive:/archive/ \
--e AWS_ACCESS_KEY_ID="" \
--e AWS_SECRET_ACCESS_KEY="" \
+-e YTAR_S3_BUCKET_NAME="replaceme" \
+-e AWS_ACCESS_KEY_ID="replaceme" \
+-e AWS_SECRET_ACCESS_KEY="replaceme" \
 github.com/kingkeithc/youtube-archiver \
 https://www.youtube.com/playlist?list=PLFD1682F2801E7ADF \
 https://www.youtube.com/playlist?list=PLaAVDbMg_XArcet5lwcRo12Fh9JrGKydh
@@ -26,6 +27,7 @@ The following variables can be set with this program. Only `AWS_ACCESS_KEY_ID` a
 |----|-----|-------|
 |AWS_ACCESS_KEY_ID|(*Required*) The Key to use with rclone for accessing AWS S3 Glacier||
 |AWS_SECRET_ACCESS_KEY|(*Required*) The secret key corresponding to AWS_ACCESS_KEY_ID||
+|YTAR_S3_BUCKET_NAME|(*Required*) The S3 bucket in which to archive the downloaded videos.||
 |YTAR_DOWNLOADS_PATH|The directory where the videos will be downloaded. Mount a volume here for persistence.|`/downloads`|
 |YTAR_ARCHIVE_PATH|The directory where the `archivefile` will be placed. Mount a volume here so videos won't be redownloaded again if the container restarts.|`/archive`|
 |YTAR_INSTALL_BASE_PATH|The path where the YouTube Archiver is installed. You shouldn't need to change this.|`/opt/ytar`|
